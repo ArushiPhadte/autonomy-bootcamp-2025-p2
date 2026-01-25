@@ -1,0 +1,12 @@
+15:49:03: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 40] Logger initialized
+15:49:04: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+15:49:05: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+15:49:06: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+15:49:07: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+15:49:08: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+15:49:09: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+15:49:10: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+15:49:11: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+15:49:12: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+15:49:13: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+15:49:14: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 77] Recieved extra heartbeat

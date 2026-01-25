@@ -1,0 +1,10 @@
+16:29:11: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 40] Logger initialized
+16:29:12: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+16:29:13: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+16:29:14: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+16:29:15: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+16:29:16: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+16:29:17: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+16:29:18: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+16:29:19: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+16:29:20: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 56] Drone: Sent incorrect message type or didn't recieve a message in time: None
