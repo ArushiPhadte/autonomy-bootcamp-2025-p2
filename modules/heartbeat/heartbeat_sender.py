@@ -56,9 +56,10 @@ class HeartbeatSender:
         """
         Attempt to send a heartbeat message.
         """
-        try: 
+        try:  #how to send heartbeat message to main process and how to recieve message mavlink
             self._logger.debug("Heartbeat sent", True)
             self._connection.mav.heartbeat_send(mavutil.mavlink.MAV_TYPE_GCS, mavutil.mavlink.MAV_AUTOPILOT_INVALID, 0, 0, 0)
+            
 
         except Exception as e: 
             #log error 
