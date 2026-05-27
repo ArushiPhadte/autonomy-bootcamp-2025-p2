@@ -82,7 +82,11 @@ class Telemetry:
         """
         Falliable create (instantiation) method to create a Telemetry object.
         """
-        pass  # Create a Telemetry object
+        try: 
+            telemetry = cls(cls.__private_key, connection, local_logger) #use the constructor
+            return True, telemetry
+        except Exception: 
+            return False, None
 
     def __init__(
         self,
@@ -94,6 +98,8 @@ class Telemetry:
         assert key is Telemetry.__private_key, "Use create() method"
 
         # Do any intializiation here
+        self._connection = connection
+        self._logger = local_logger
 
     def run(
         self,
@@ -103,11 +109,50 @@ class Telemetry:
         Receive LOCAL_POSITION_NED and ATTITUDE messages from the drone,
         combining them together to form a single TelemetryData object.
         """
+        start = time.perf_counter()
+        msg_attitude = None
+        msg_position = None
+
+        while (time.perf_counter() - start < 1):
+            msg = self._connection.recv_match(blocking = True) 
+
+            if msg != None and msg.get_type() == "LOCAL_POSITION_NED":
+                msg_position = msg
+            elif msg!= None and msg.get_type() == "ATTITUDE": 
+                msg_attitude = msg
+
+            if (msg_position is not None and msg_attitude is not None): #if msg of attitude and position are valid/not empty, then exit loop
+                break; 
+            
+        if msg_position is None or msg_attitude is None: #if even one of the messages is empty cause 
+            self._logger.error("Did not recieve both position and attitude", True)
+            return False, None
+        
+        timestamp = max(msg_position.time_boot_ms, msg_attitude.time_boot_ms)
+
+        #create telemetry data object with msg_attitude and msg_position 
+        telemetry = TelemetryData(
+            timestamp, 
+            msg_position.x, 
+            msg_position.y,
+            msg_position.z,
+            msg_position.vx, 
+            msg_position.vy, 
+            msg_position.vz, 
+            msg_attitude.roll, 
+            msg_attitude.pitch, 
+            msg_attitude.yaw, 
+            msg_attitude.rollspeed, 
+            msg_attitude.pitchspeed,
+            msg_attitude.yaw_speed
+        )
+
+        return True, telemetry
+
+
         # Read MAVLink message LOCAL_POSITION_NED (32)
         # Read MAVLink message ATTITUDE (30)
         # Return the most recent of both, and use the most recent message's timestamp
-        pass
-
 
 # =================================================================================================
 #                            ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑

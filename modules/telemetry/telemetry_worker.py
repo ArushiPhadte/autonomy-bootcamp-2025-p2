@@ -18,6 +18,7 @@ from ..common.modules.logger import logger
 # =================================================================================================
 def telemetry_worker(
     connection: mavutil.mavfile,
+    controller: worker_controller.WorkerController,
     args,  # Place your own arguments here
     # Add other necessary worker arguments here
 ) -> None:
@@ -47,6 +48,16 @@ def telemetry_worker(
     #                          ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
     # =============================================================================================
     # Instantiate class object (telemetry.Telemetry)
+
+    success, telemetry_obj = telemetry.Telemetry.create(
+        connection, 
+        controller,
+        args, 
+        local_logger
+    )
+    while not controller.is_exit_requested():
+        telemetry.run()
+
 
     # Main loop: do work.
 
