@@ -18,6 +18,9 @@ from ..common.modules.logger import logger
 # =================================================================================================
 def command_worker(
     connection: mavutil.mavfile,
+    controller: worker_controller.WorkerController,
+    input_queue, 
+    output_queue,
     target: command.Position,
     args,  # Place your own arguments here
     # Add other necessary worker arguments here
@@ -50,6 +53,24 @@ def command_worker(
     # Instantiate class object (command.Command)
 
     # Main loop: do work.
+
+    result, command_obj = command.Command.create(
+        connection, 
+        target, 
+        args,
+        local_logger
+    ) 
+
+    if result == False: 
+        local_logger.error("Failed to create Command object")
+        return
+
+
+    while not controller.is_exit_requested():
+        #get telemetry data
+        telemetry_data = input_queue.get()
+
+        command_obj.run(telemetry_data)
 
 
 # =================================================================================================
