@@ -19,13 +19,13 @@ from ..common.modules.logger import logger
 def heartbeat_sender_worker(
     connection: mavutil.mavfile,
     controller: worker_controller.WorkerController
-    # Place your own arguments here
-    # Add other necessary worker arguments here
 ) -> None:
     """
-    Worker process.
+    Worker process that will send a heartbeat message every second to the drone
 
-    args... describe what the arguments are
+    connection : connection to drone
+    controller: controls the worker's actions
+    
     """
     # =============================================================================================
     #                          ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑

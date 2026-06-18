@@ -20,15 +20,18 @@ def command_worker(
     connection: mavutil.mavfile,
     controller: worker_controller.WorkerController,
     input_queue, 
-    output_queue,
+    output_queue, #not sure if this is needed
     target: command.Position,
     args,  # Place your own arguments here
     # Add other necessary worker arguments here
 ) -> None:
     """
-    Worker process.
+    Worker process is to control the drone's position and yaw to face and align target.
 
-    args... describe what the arguments are
+    connection: connection to drone 
+    controller: controls the worker's actions 
+    input_queue: recieves telemetry data 
+    target: position of target 
     """
     # =============================================================================================
     #                          ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑

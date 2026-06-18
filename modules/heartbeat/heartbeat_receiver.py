@@ -32,8 +32,6 @@ class HeartbeatReceiver:
         except Exception: 
             return False, None
 
-        # Create a HeartbeatReceiver object
-
     def __init__(
         self,
         key: object,
@@ -48,7 +46,7 @@ class HeartbeatReceiver:
 
     def run(
         self,
-        args = None,  # Put your own arguments here
+        args = None,  
     ):
         """
         Attempt to recieve a heartbeat message.

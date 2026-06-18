@@ -23,9 +23,10 @@ def telemetry_worker(
     # Add other necessary worker arguments here
 ) -> None:
     """
-    Worker process.
+    Worker process is to recieve alittude and position data of the drone.
 
-    args... describe what the arguments are
+    connection: connection to drone
+    controller: controls the worker's actions 
     """
     # =============================================================================================
     #                          ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑

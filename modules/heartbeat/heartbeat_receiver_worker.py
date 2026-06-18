@@ -24,9 +24,12 @@ def heartbeat_receiver_worker(
     # Add other necessary worker arguments here
 ) -> None:
     """
-    Worker process.
+    Worker process is to recieve a heartbeat every second and if enough heartbeats are missed, declare the drone disconnected 
 
-    args... describe what the arguments are
+    connection: connection to drone
+    controller: controls the worker's actions 
+    input_queue: queue of incoming heartbeats 
+
     """
     # =============================================================================================
     #                          ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑
