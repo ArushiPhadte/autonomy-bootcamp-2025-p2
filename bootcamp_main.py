@@ -18,7 +18,7 @@ from modules.command import command_worker
 from modules.heartbeat import heartbeat_receiver_worker
 from modules.heartbeat import heartbeat_sender_worker
 from modules.telemetry import telemetry_worker
-from utilities.workers import queue_proxy_wrapper
+#from utilities.workers import queue_proxy_wrapper
 from utilities.workers import worker_controller
 from utilities.workers import worker_manager
 
