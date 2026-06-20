@@ -62,34 +62,35 @@ def stop(
 
     controller.request_exit()
 
+
 def read_queue(
-    output_queue,  # Add any necessary arguments
+    output_queue: queue_proxy_wrapper.QueueProxyWrapper,  # Add any necessary arguments
     main_logger: logger.Logger,
 ) -> None:
     """
     Read and print the output queue.
     """
-    while True: 
-        try: 
-            state = output_queue.queue.get(timeout = 1)
+    while True:
+        try:
+            state = output_queue.get(timeout=1)
             main_logger.info(state)
-        except Exception: 
+        except AssertionError:
             continue
 
-    #pass  # Add logic to read from your worker's output queue and print it using the logger
+    # pass  # Add logic to read from your worker's output queue and print it using the logger
 
 
 def put_queue(
-    path,  # Add any necessary arguments
-    input_queue
-) -> None:
+    path: list[telemetry.TelemetryData], input_queue: queue_proxy_wrapper.QueueProxyWrapper
+) -> None:  # Add any necessary arguments
     """
     Place mocked inputs into the input queue periodically with period TELEMETRY_PERIOD.
     """
-    while True: 
+    while True:
         for item in path:
             input_queue.put(item)
             time.sleep(TELEMETRY_PERIOD)
+
 
 # =================================================================================================
 #                            ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑
@@ -145,7 +146,6 @@ def main() -> int:
     # Create your queues
     input_queue = manager.Queue()
     output_queue = manager.Queue()
-    queue_wrapper = queue_proxy_wrapper.QueueProxyWrapper(mp_manager=manager)
 
     # Test cases, DO NOT EDIT!
     path = [
@@ -240,14 +240,7 @@ def main() -> int:
     # Read the main queue (worker outputs)
     threading.Thread(target=read_queue, args=(output_queue, main_logger)).start()
 
-    command_worker.command_worker(
-        connection,
-        controller, 
-        input_queue,
-        output_queue,
-        TARGET, 
-        None
-    )
+    command_worker.command_worker(connection, controller, input_queue, TARGET)
     # =============================================================================================
     #                          ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑
     # =============================================================================================

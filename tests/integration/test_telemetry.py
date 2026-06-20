@@ -47,30 +47,30 @@ def start_drone() -> None:
 #                            ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
 # =================================================================================================
 def stop(
-    controller: worker_controller.WorkerController
+    controller: worker_controller.WorkerController,
     # Add any necessary arguments
 ) -> None:
     """
     Stop the workers.
     """
-    
+
     controller.request_exit()
 
 
 def read_queue(
-    output_queue,  # Add any necessary arguments
+    output_queue: queue_proxy_wrapper.QueueProxyWrapper,  # Add any necessary arguments
     main_logger: logger.Logger,
 ) -> None:
     """
     Read and print the output queue.
     """
-    while True: 
-        try: 
-            state = output_queue.queue.get(timeout = 1)
+    while True:
+        try:
+            state = output_queue.queue.get(timeout=1)
             main_logger.info(state)
-        except Exception: 
+        except AssertionError:
             continue
-    #pass  # Add logic to read from your worker's output queue and print it using the logger
+    # pass  # Add logic to read from your worker's output queue and print it using the logger
 
 
 # =================================================================================================
@@ -126,7 +126,6 @@ def main() -> int:
 
     # Create your queues
     output_queue = manager.Queue()
-    queue_wrapper = queue_proxy_wrapper.QueueProxyWrapper(mp_manager=manager)
 
     # Just set a timer to stop the worker after a while, since the worker infinite loops
     threading.Timer(TELEMETRY_PERIOD * NUM_TRIALS * 2 + NUM_FAILS, stop, (controller,)).start()
@@ -135,10 +134,8 @@ def main() -> int:
     threading.Thread(target=read_queue, args=(output_queue, main_logger)).start()
 
     telemetry_worker.telemetry_worker(
-        connection, 
-        controller, 
-        None
-        # Put your own arguments here
+        connection,
+        controller,
     )
     # =============================================================================================
     #                          ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑

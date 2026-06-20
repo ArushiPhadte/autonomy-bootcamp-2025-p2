@@ -18,17 +18,16 @@ from ..common.modules.logger import logger
 # =================================================================================================
 def heartbeat_receiver_worker(
     connection: mavutil.mavfile,
-    controller: worker_controller.WorkerController, 
+    controller: worker_controller.WorkerController,
     input_queue: queue_proxy_wrapper.QueueProxyWrapper,
-    args = None,  # Place your own arguments here
     # Add other necessary worker arguments here
 ) -> None:
     """
-    Worker process is to recieve a heartbeat every second and if enough heartbeats are missed, declare the drone disconnected 
+    Worker process is to recieve a heartbeat every second and if enough heartbeats are missed, declare the drone disconnected
 
     connection: connection to drone
-    controller: controls the worker's actions 
-    input_queue: queue of incoming heartbeats 
+    controller: controls the worker's actions
+    input_queue: queue of incoming heartbeats
 
     """
     # =============================================================================================
@@ -53,11 +52,10 @@ def heartbeat_receiver_worker(
     # =============================================================================================
     # Instantiate class object (heartbeat_receiver.HeartbeatReceiver)
     result, hb = heartbeat_receiver.HeartbeatReceiver.create(
-    connection = connection, 
-    local_logger = local_logger
-    ) 
+        connection=connection, local_logger=local_logger
+    )
 
-    if result == False: 
+    if result is False:
         local_logger.error("Failed to create HeartbeatSender object")
         return
 

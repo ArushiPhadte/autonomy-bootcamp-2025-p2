@@ -36,7 +36,7 @@ COMMAND_QUEUE_MAX_SIZE = 5
 
 # Set worker counts
 HEARTBEAT_SENDER_WORKER_COUNT = 1
-HEARTBEAT_RECEIVER_WORKER_COUNT = 1 
+HEARTBEAT_RECEIVER_WORKER_COUNT = 1
 TELEMETRY_WORKER_COUNT = 1
 COMMAND_WORKER_COUNT = 1
 
@@ -96,15 +96,13 @@ def main() -> int:
 
     # Heartbeat sender
     result, heartbeat_sender_worker_properties = worker_manager.WorkerProperties.create(
-    count=HEARTBEAT_SENDER_WORKER_COUNT,
-    target=heartbeat_sender_worker.heartbeat_sender_worker,
-    work_arguments=(
-        connection,
-    ),
-    input_queues=[],
-    output_queues=[],
-    controller=controller,
-    local_logger=main_logger,
+        count=HEARTBEAT_SENDER_WORKER_COUNT,
+        target=heartbeat_sender_worker.heartbeat_sender_worker,
+        work_arguments=(connection,),
+        input_queues=[],
+        output_queues=[],
+        controller=controller,
+        local_logger=main_logger,
     )
     if not result:
         print("Failed to create arguments for Heartbeat Sender")
@@ -115,16 +113,16 @@ def main() -> int:
 
     # Heartbeat receiver
     result, heartbeat_receiver_worker_properties = worker_manager.WorkerProperties.create(
-    count=HEARTBEAT_RECEIVER_WORKER_COUNT,
-    target=heartbeat_receiver_worker.heartbeat_receiver_worker,
-    work_arguments=(
-        connection,
-        None,
-    ),
-    input_queues=[],
-    output_queues=[heartbeat_queue],
-    controller=controller,
-    local_logger=main_logger,
+        count=HEARTBEAT_RECEIVER_WORKER_COUNT,
+        target=heartbeat_receiver_worker.heartbeat_receiver_worker,
+        work_arguments=(
+            connection,
+            None,
+        ),
+        input_queues=[],
+        output_queues=[heartbeat_queue],
+        controller=controller,
+        local_logger=main_logger,
     )
     if not result:
         print("Failed to create arguments for Heartbeat Receiver")
@@ -135,50 +133,50 @@ def main() -> int:
 
     # Telemetry
     result, telemetry_worker_properties = worker_manager.WorkerProperties.create(
-    count=TELEMETRY_WORKER_COUNT,
-    target=telemetry_worker.telemetry_worker,
-    work_arguments=(
-        connection,
-        None,  # args
-    ),
-    input_queues=[],
-    output_queues=[telemetry_queue],
-    controller=controller,
-    local_logger=main_logger,
-)
+        count=TELEMETRY_WORKER_COUNT,
+        target=telemetry_worker.telemetry_worker,
+        work_arguments=(
+            connection,
+            None,  # args
+        ),
+        input_queues=[],
+        output_queues=[telemetry_queue],
+        controller=controller,
+        local_logger=main_logger,
+    )
 
     if not result:
         print("Failed to create arguments for Telemetry")
         return -1
-    
+
     # Get Pylance to stop complaining
     assert telemetry_worker_properties is not None
 
     # Command
     result, command_worker_properties = worker_manager.WorkerProperties.create(
-    count=COMMAND_WORKER_COUNT,
-    target=command_worker.command_worker,
-    work_arguments=(
-        connection,
-        TARGET,
-        None,  # args
-    ),
-    input_queues=[telemetry_queue],
-    output_queues=[command_queue],
-    controller=controller,
-    local_logger=main_logger,
-)
+        count=COMMAND_WORKER_COUNT,
+        target=command_worker.command_worker,
+        work_arguments=(
+            connection,
+            TARGET,
+            None,  # args
+        ),
+        input_queues=[telemetry_queue],
+        output_queues=[command_queue],
+        controller=controller,
+        local_logger=main_logger,
+    )
 
     if not result:
         print("Failed to create arguments for Command")
         return -1
-    
+
     # Get Pylance to stop complaining
     assert command_worker_properties is not None
 
     # Create the workers (processes) and obtain their managers
 
-    #heartbeat sender
+    # heartbeat sender
     worker_managers: list[worker_manager.WorkerManager] = []  # List of all worker managers
 
     result, heartbeat_sender_manager = worker_manager.WorkerManager.create(
@@ -193,7 +191,7 @@ def main() -> int:
     assert heartbeat_sender_manager is not None
     worker_managers.append(heartbeat_sender_manager)
 
-    #heartbeat receiver
+    # heartbeat receiver
     result, heartbeat_receiver_manager = worker_manager.WorkerManager.create(
         worker_properties=heartbeat_receiver_worker_properties,
         local_logger=main_logger,
@@ -206,7 +204,7 @@ def main() -> int:
     assert heartbeat_receiver_manager is not None
     worker_managers.append(heartbeat_receiver_manager)
 
-    #telemetry
+    # telemetry
     result, telemetry_manager = worker_manager.WorkerManager.create(
         worker_properties=telemetry_worker_properties,
         local_logger=main_logger,
@@ -219,7 +217,7 @@ def main() -> int:
     assert telemetry_manager is not None
     worker_managers.append(telemetry_manager)
 
-    #command
+    # command
     result, command_manager = worker_manager.WorkerManager.create(
         worker_properties=command_worker_properties,
         local_logger=main_logger,
@@ -242,22 +240,21 @@ def main() -> int:
     # Continue running for 100 seconds or until the drone disconnects
     start_time = time.time()
 
-    while (time.time() - start_time < 100):
+    while time.time() - start_time < 100:
 
-        #print heartbeat queue
+        # print heartbeat queue
         try:
-            status = heartbeat_queue.get_nowait() 
+            status = heartbeat_queue.get_nowait()
             main_logger.info("Heartbeat :" + str(status))
-        except queue.Empty: 
+        except queue.Empty:
             pass
 
-        #print command queue
+        # print command queue
         try:
-            status = command_queue.get_nowait() 
+            status = command_queue.get_nowait()
             main_logger.info("Command :" + str(status))
-        except queue.Empty: 
+        except queue.Empty:
             pass
-
 
     # Stop the processes
     controller.request_exit()
@@ -280,7 +277,6 @@ def main() -> int:
     # We can reset controller in case we want to reuse it
     # Alternatively, create a new WorkerController instance
     controller.clear_exit()
-
 
     # =============================================================================================
     #                          ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑

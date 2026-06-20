@@ -26,7 +26,7 @@ NUM_TRIALS = 10
 #                            ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
 # =================================================================================================
 # Add your own constants here
-#controller = worker_controller.WorkerController()
+# controller = worker_controller.WorkerController()
 # =================================================================================================
 #                            ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑
 # =================================================================================================
@@ -51,6 +51,7 @@ def stop(
     Stop the workers.
     """
     controller.request_exit()
+
 
 # =================================================================================================
 #                            ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑
@@ -95,12 +96,9 @@ def main() -> int:
     controller = worker_controller.WorkerController()
 
     # Just set a timer to stop the worker after a while, since the worker infinite loops
-    threading.Timer(HEARTBEAT_PERIOD * NUM_TRIALS, stop, args = (controller,)).start()
+    threading.Timer(HEARTBEAT_PERIOD * NUM_TRIALS, stop, args=(controller,)).start()
 
-    heartbeat_sender_worker.heartbeat_sender_worker(
-        connection = connection, 
-        controller = controller
-    )
+    heartbeat_sender_worker.heartbeat_sender_worker(connection=connection, controller=controller)
     # =============================================================================================
     #                          ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑
     # =============================================================================================

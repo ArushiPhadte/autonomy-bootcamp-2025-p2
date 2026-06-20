@@ -4,7 +4,8 @@ Heartbeat worker that sends heartbeats periodically.
 
 import os
 import pathlib
-import time
+
+# import time
 
 from pymavlink import mavutil
 
@@ -17,15 +18,14 @@ from ..common.modules.logger import logger
 #                            ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
 # =================================================================================================
 def heartbeat_sender_worker(
-    connection: mavutil.mavfile,
-    controller: worker_controller.WorkerController
+    connection: mavutil.mavfile, controller: worker_controller.WorkerController
 ) -> None:
     """
     Worker process that will send a heartbeat message every second to the drone
 
     connection : connection to drone
     controller: controls the worker's actions
-    
+
     """
     # =============================================================================================
     #                          ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑
@@ -49,18 +49,16 @@ def heartbeat_sender_worker(
     # =============================================================================================
     # Instantiate class object (heartbeat_sender.HeartbeatSender)
     result, hb = heartbeat_sender.HeartbeatSender.create(
-        connection = connection, 
-        local_logger = local_logger
-    ) 
+        connection=connection, local_logger=local_logger
+    )
 
-    if result == False: 
+    if result is False:
         local_logger.error("Failed to create HeartbeatSender object")
         return
-    
+
     # Main loop: do work.
     while not controller.is_exit_requested():
-        hb.run() 
-
+        hb.run()
 
 
 # =================================================================================================
