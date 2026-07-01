@@ -72,7 +72,7 @@ def read_queue(
     """
     while True:
         try:
-            state = output_queue.get(timeout=1)
+            state = output_queue.queue.get()
             main_logger.info(state)
         except AssertionError:
             continue
@@ -88,7 +88,7 @@ def put_queue(
     """
     while True:
         for item in path:
-            input_queue.put(item)
+            input_queue.queue.put(item)
             time.sleep(TELEMETRY_PERIOD)
 
 

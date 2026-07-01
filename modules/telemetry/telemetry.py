@@ -101,7 +101,7 @@ class Telemetry:
 
     def run(
         self,
-    ) -> None:
+    ) -> "tuple[bool, TelemetryData | None]":
         """
         Receive LOCAL_POSITION_NED and ATTITUDE messages from the drone,
         combining them together to form a single TelemetryData object.
