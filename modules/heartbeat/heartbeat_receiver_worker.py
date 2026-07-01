@@ -18,8 +18,8 @@ from ..common.modules.logger import logger
 # =================================================================================================
 def heartbeat_receiver_worker(
     connection: mavutil.mavfile,
-    controller: worker_controller.WorkerController,
     input_queue: queue_proxy_wrapper.QueueProxyWrapper,
+    controller: worker_controller.WorkerController,
     # Add other necessary worker arguments here
 ) -> None:
     """
@@ -27,7 +27,7 @@ def heartbeat_receiver_worker(
 
     connection: connection to drone
     controller: controls the worker's actions
-    input_queue: queue of incoming heartbeats
+    output_queue: queue of incoming heartbeats
 
     """
     # =============================================================================================
@@ -64,9 +64,9 @@ def heartbeat_receiver_worker(
     while not controller.is_exit_requested():
         state = hb.run()
 
-        input_data = input_queue.queue.put(state)
+        input_queue.queue.put(state)
 
-        local_logger.info(str(input_data), None)
+        local_logger.info(str(state), None)
 
 
 # =================================================================================================

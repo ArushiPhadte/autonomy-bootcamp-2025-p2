@@ -144,8 +144,8 @@ def main() -> int:
 
     heartbeat_receiver_worker.heartbeat_receiver_worker(
         connection,
-        controller,
         queue_wrapper,
+        controller,
         # Place your own arguments here
     )
     # =============================================================================================

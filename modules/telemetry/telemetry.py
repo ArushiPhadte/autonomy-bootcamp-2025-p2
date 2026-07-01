@@ -145,7 +145,7 @@ class Telemetry:
             msg_attitude.yaw,
             msg_attitude.rollspeed,
             msg_attitude.pitchspeed,
-            msg_attitude.yaw_speed,
+            msg_attitude.yawspeed,
         )
 
         return True, telemetry

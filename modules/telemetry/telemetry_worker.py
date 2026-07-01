@@ -49,9 +49,9 @@ def telemetry_worker(
     # =============================================================================================
     # Instantiate class object (telemetry.Telemetry)
 
-    telemetry.Telemetry.create(connection, local_logger)
+    telemetry_obj = telemetry.Telemetry.create(connection, local_logger)
     while not controller.is_exit_requested():
-        telemetry.run()
+        telemetry_obj.run()
 
     # Main loop: do work.
 

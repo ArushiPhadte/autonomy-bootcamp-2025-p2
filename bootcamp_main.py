@@ -19,7 +19,7 @@ from modules.heartbeat import heartbeat_receiver_worker
 from modules.heartbeat import heartbeat_sender_worker
 from modules.telemetry import telemetry_worker
 
-# from utilities.workers import queue_proxy_wrapper
+from utilities.workers import queue_proxy_wrapper
 from utilities.workers import worker_controller
 from utilities.workers import worker_manager
 
@@ -89,9 +89,9 @@ def main() -> int:
     manager = mp.Manager()
 
     # Create queues
-    telemetry_queue = manager.Queue()
-    command_queue = manager.Queue()
-    heartbeat_queue = manager.Queue()
+    telemetry_queue = queue_proxy_wrapper.QueueProxyWrapper(manager, TELEMETRY_QUEUE_MAX_SIZE)
+    command_queue = queue_proxy_wrapper.QueueProxyWrapper(manager, COMMAND_QUEUE_MAX_SIZE)
+    heartbeat_queue = queue_proxy_wrapper.QueueProxyWrapper(manager, HEARTBEAT_QUEUE_MAX_SIZE)
 
     # Create worker properties for each worker type (what inputs it takes, how many workers)
 
@@ -99,7 +99,7 @@ def main() -> int:
     result, heartbeat_sender_worker_properties = worker_manager.WorkerProperties.create(
         count=HEARTBEAT_SENDER_WORKER_COUNT,
         target=heartbeat_sender_worker.heartbeat_sender_worker,
-        work_arguments=(connection,),
+        work_arguments=(connection),
         input_queues=[],
         output_queues=[],
         controller=controller,
@@ -116,10 +116,7 @@ def main() -> int:
     result, heartbeat_receiver_worker_properties = worker_manager.WorkerProperties.create(
         count=HEARTBEAT_RECEIVER_WORKER_COUNT,
         target=heartbeat_receiver_worker.heartbeat_receiver_worker,
-        work_arguments=(
-            connection,
-            None,
-        ),
+        work_arguments=(connection),
         input_queues=[],
         output_queues=[heartbeat_queue],
         controller=controller,
@@ -136,10 +133,7 @@ def main() -> int:
     result, telemetry_worker_properties = worker_manager.WorkerProperties.create(
         count=TELEMETRY_WORKER_COUNT,
         target=telemetry_worker.telemetry_worker,
-        work_arguments=(
-            connection,
-            None,  # args
-        ),
+        work_arguments=(connection),
         input_queues=[],
         output_queues=[telemetry_queue],
         controller=controller,
@@ -157,11 +151,7 @@ def main() -> int:
     result, command_worker_properties = worker_manager.WorkerProperties.create(
         count=COMMAND_WORKER_COUNT,
         target=command_worker.command_worker,
-        work_arguments=(
-            connection,
-            TARGET,
-            None,  # args
-        ),
+        work_arguments=(connection, TARGET),
         input_queues=[telemetry_queue],
         output_queues=[command_queue],
         controller=controller,

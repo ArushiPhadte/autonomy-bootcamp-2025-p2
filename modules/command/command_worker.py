@@ -18,18 +18,20 @@ from ..common.modules.logger import logger
 # =================================================================================================
 def command_worker(
     connection: mavutil.mavfile,
-    controller: worker_controller.WorkerController,
-    input_queue: queue_proxy_wrapper.QueueProxyWrapper,
     target: command.Position,
+    input_queue: queue_proxy_wrapper.QueueProxyWrapper,
+    output_queue: queue_proxy_wrapper.QueueProxyWrapper,
+    controller: worker_controller.WorkerController,
     # Add other necessary worker arguments here
 ) -> None:
     """
     Worker process is to control the drone's position and yaw to face and align target.
 
     connection: connection to drone
-    controller: controls the worker's actions
-    input_queue: recieves telemetry data
+    controller: controller of drone
+    input_queue: incoming telemetry data
     target: position of target
+    output_queue: outgoing status reports to drone
     """
     # =============================================================================================
     #                          ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑
@@ -53,8 +55,6 @@ def command_worker(
     # =============================================================================================
     # Instantiate class object (command.Command)
 
-    # Main loop: do work.
-
     result, command_obj = command.Command.create(connection, target, local_logger)
 
     if result is False:
@@ -63,9 +63,14 @@ def command_worker(
 
     while not controller.is_exit_requested():
         # get telemetry data
-        telemetry_data = input_queue.get()
+        telemetry_data = input_queue.queue.get()
 
-        command_obj.run(telemetry_data)
+        status = command_obj.run(telemetry_data)
+
+        if status is True:  # changes have been made
+            output_queue.queue.put("Drone has been altered")
+        else:
+            output_queue.queue.put("Drone has not been changed")
 
 
 # =================================================================================================

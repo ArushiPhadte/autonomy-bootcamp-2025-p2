@@ -48,9 +48,7 @@ def heartbeat_sender_worker(
     #                          ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
     # =============================================================================================
     # Instantiate class object (heartbeat_sender.HeartbeatSender)
-    result, hb = heartbeat_sender.HeartbeatSender.create(
-        connection=connection, local_logger=local_logger
-    )
+    result, hb = heartbeat_sender.HeartbeatSender.create(connection, local_logger)
 
     if result is False:
         local_logger.error("Failed to create HeartbeatSender object")
