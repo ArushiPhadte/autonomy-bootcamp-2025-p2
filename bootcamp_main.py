@@ -99,7 +99,7 @@ def main() -> int:
     result, heartbeat_sender_worker_properties = worker_manager.WorkerProperties.create(
         count=HEARTBEAT_SENDER_WORKER_COUNT,
         target=heartbeat_sender_worker.heartbeat_sender_worker,
-        work_arguments=(connection),
+        work_arguments=(connection,),
         input_queues=[],
         output_queues=[],
         controller=controller,
@@ -116,7 +116,7 @@ def main() -> int:
     result, heartbeat_receiver_worker_properties = worker_manager.WorkerProperties.create(
         count=HEARTBEAT_RECEIVER_WORKER_COUNT,
         target=heartbeat_receiver_worker.heartbeat_receiver_worker,
-        work_arguments=(connection),
+        work_arguments=(connection,),
         input_queues=[],
         output_queues=[heartbeat_queue],
         controller=controller,
@@ -133,7 +133,7 @@ def main() -> int:
     result, telemetry_worker_properties = worker_manager.WorkerProperties.create(
         count=TELEMETRY_WORKER_COUNT,
         target=telemetry_worker.telemetry_worker,
-        work_arguments=(connection),
+        work_arguments=(connection,),
         input_queues=[],
         output_queues=[telemetry_queue],
         controller=controller,
@@ -151,7 +151,7 @@ def main() -> int:
     result, command_worker_properties = worker_manager.WorkerProperties.create(
         count=COMMAND_WORKER_COUNT,
         target=command_worker.command_worker,
-        work_arguments=(connection, TARGET),
+        work_arguments=(connection, TARGET,),
         input_queues=[telemetry_queue],
         output_queues=[command_queue],
         controller=controller,
@@ -235,14 +235,14 @@ def main() -> int:
 
         # print heartbeat queue
         try:
-            status = heartbeat_queue.get_nowait()
+            status = heartbeat_queue.queue.get_nowait()
             main_logger.info("Heartbeat :" + str(status))
         except queue.Empty:
             pass
 
         # print command queue
         try:
-            status = command_queue.get_nowait()
+            status = command_queue.queue.get_nowait()
             main_logger.info("Command :" + str(status))
         except queue.Empty:
             pass
