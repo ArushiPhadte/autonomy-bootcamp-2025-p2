@@ -151,7 +151,10 @@ def main() -> int:
     result, command_worker_properties = worker_manager.WorkerProperties.create(
         count=COMMAND_WORKER_COUNT,
         target=command_worker.command_worker,
-        work_arguments=(connection, TARGET,),
+        work_arguments=(
+            connection,
+            TARGET,
+        ),
         input_queues=[telemetry_queue],
         output_queues=[command_queue],
         controller=controller,
