@@ -65,10 +65,10 @@ def command_worker(
         # get telemetry data
         telemetry_data = input_queue.queue.get()
 
-        status = command_obj.run(telemetry_data)
+        status, msg = command_obj.run(telemetry_data)
 
         if status is True:  # changes have been made
-            output_queue.queue.put("Drone has been altered")
+            output_queue.queue.put(msg)
         else:
             output_queue.queue.put("Drone has not been changed")
 

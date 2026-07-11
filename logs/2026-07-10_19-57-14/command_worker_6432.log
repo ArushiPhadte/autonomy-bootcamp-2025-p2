@@ -1,0 +1,5 @@
+19:57:15: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command_worker.py | command_worker | 51] Logger initialized
+19:57:15: [INFO] Average X velocity: 0.0
+19:57:15: [INFO] Average Y velocity: 0.0
+19:57:15: [INFO] Average Z velocity: 4.0
+19:57:15: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 122] CHANGE ALTITUDE: 1

@@ -1,0 +1,28 @@
+20:00:00: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 45] Logger initialized
+20:00:01: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:01: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:01: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:01: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:04: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:05: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:05: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:06: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:06: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:07: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:07: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:08: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:08: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:09: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:09: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:10: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:10: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:11: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:11: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:12: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:12: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:13: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:13: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:14: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:14: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:15: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+20:00:15: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 80] Recieved extra command

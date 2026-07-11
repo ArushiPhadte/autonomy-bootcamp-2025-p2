@@ -54,10 +54,11 @@ def telemetry_worker(
     success, telemetry_obj = telemetry.Telemetry.create(connection, local_logger)
     if success is False:
         local_logger.info("Creating Telemetry object failed", True)
+        return
     while not controller.is_exit_requested():
         status, telemetry_data = telemetry_obj.run()
         if status and telemetry_data is not None:
-            output_queue.queue_put(telemetry_data)
+            output_queue.queue.put(telemetry_data)
 
     # Main loop: do work.
 

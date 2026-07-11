@@ -73,11 +73,12 @@ class Command:  # pylint: disable=too-many-instance-attributes
         self,
         telemetry_data: telemetry.TelemetryData,
         # Put your own arguments here
-    ) -> bool:
+    ) -> "tuple[bool, str | None]":
         """
         Make a decision based on received telemetry data.
         """
         change_status = False  # bool where False is no changes, True is drone has changed
+        msg = ""  # orginal string where no changes have been made
 
         # Log average velocity for this trip so far
         self.num_data = self.num_data + 1
@@ -120,28 +121,61 @@ class Command:  # pylint: disable=too-many-instance-attributes
             )
             self._logger.info("CHANGE ALTITUDE: " + str(change_height), True)
             change_status = True
+            msg = msg + "CHANGE ALTITUDE: " + str(change_height)
 
         # Adjust direction (yaw) using MAV_CMD_CONDITION_YAW (115). Must use relative angle to current state
         # String to return to main: "CHANGING_YAW: {degree you changed it by in range [-180, 180]}"
 
         # compare yaw actual to yaw desired
-        desired_yaw = math.degrees(
-            math.atan2(self._target.y - telemetry_data.y, self._target.x - telemetry_data.x)
+        # desired_yaw = math.degrees(
+        #     math.atan2(self._target.y - telemetry_data.y, self._target.x - telemetry_data.x)
+        # )
+
+        desired_yaw = math.atan2(
+            self._target.y - telemetry_data.y, self._target.x - telemetry_data.x
+        )
+        yaw_change = math.atan2(
+            math.sin(desired_yaw - telemetry_data.yaw), math.cos(desired_yaw - telemetry_data.yaw)
         )
 
-        yaw_change = desired_yaw - math.degrees(telemetry_data.yaw)
-        yaw_change = ((yaw_change + 180) % 360) - 180
+        # yaw_change = desired_yaw - math.degrees(telemetry_data.yaw)
+        # yaw_change = ((yaw_change + 180) % 360) - 180
 
-        if abs(yaw_change) > 5:
+        if abs(math.degrees(yaw_change)) > 5:
             # update yaw
+            # if yaw_change < -60 and yaw_change >-65:
+            #     return False, ""
             self._connection.mav.command_long_send(
-                1, 0, mavutil.mavlink.MAV_CMD_CONDITION_YAW, 0, abs(yaw_change), 5, 0, 1, 0, 0, 0
+                1,
+                0,
+                mavutil.mavlink.MAV_CMD_CONDITION_YAW,
+                0,
+                math.degrees(yaw_change),
+                5,
+                0,
+                1,
+                0,
+                0,
+                0,
             )
-            self._logger.info("CHANGE YAW: " + str(yaw_change), True)
+            self._logger.info(
+                "Current yaw: "
+                + str(math.degrees(telemetry_data.yaw))
+                + " Desired yaw: "
+                + str(math.degrees(desired_yaw))
+                + " Change: "
+                + str(math.degrees(yaw_change)),
+                None,
+            )
+            self._logger.info("CHANGE YAW: " + str(math.degrees(yaw_change)), True)
+            if msg != "":
+                msg = msg + "\n" + "CHANGE YAW: " + str(math.degrees(yaw_change))
+            else:
+                msg = msg + "CHANGE YAW: " + str(math.degrees(yaw_change))
             change_status = True
 
         # Positive angle is counter-clockwise as in a right handed system
-        return change_status
+        return change_status, msg
 
 
 # =================================================================================================

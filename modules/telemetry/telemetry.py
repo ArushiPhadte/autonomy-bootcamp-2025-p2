@@ -111,6 +111,7 @@ class Telemetry:
         msg_position = None
 
         while time.perf_counter() - start < 1:
+            time.sleep(0.25)  # timeout
             msg = self._connection.recv_match(blocking=True)
 
             if msg is not None and msg.get_type() == "LOCAL_POSITION_NED":

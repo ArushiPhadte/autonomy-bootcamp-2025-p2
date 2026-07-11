@@ -86,10 +86,10 @@ def put_queue(
     """
     Place mocked inputs into the input queue periodically with period TELEMETRY_PERIOD.
     """
-    while True:
-        for item in path:
-            input_queue.queue.put(item)
-            time.sleep(TELEMETRY_PERIOD)
+    # while True:
+    for item in path:
+        input_queue.queue.put(item)
+        time.sleep(TELEMETRY_PERIOD)
 
 
 # =================================================================================================
@@ -144,8 +144,8 @@ def main() -> int:
     manager = mp.Manager()
 
     # Create your queues
-    input_queue = manager.Queue()
-    output_queue = manager.Queue()
+    input_queue = queue_proxy_wrapper.QueueProxyWrapper(mp_manager=manager)
+    output_queue = queue_proxy_wrapper.QueueProxyWrapper(mp_manager=manager)
 
     # Test cases, DO NOT EDIT!
     path = [
@@ -223,9 +223,12 @@ def main() -> int:
         telemetry.TelemetryData(
             x=30, y=0, z=30, yaw=-math.pi, x_velocity=-20, y_velocity=0, z_velocity=0
         ),
+        # __________________________
+        # this is where error happens for extra command that should not be send
         telemetry.TelemetryData(
             x=20, y=0, z=30, yaw=math.pi, x_velocity=-20, y_velocity=0, z_velocity=0
         ),
+        # _________________________
         telemetry.TelemetryData(
             x=10, y=0, z=30, yaw=-math.pi, x_velocity=-20, y_velocity=0, z_velocity=0
         ),
