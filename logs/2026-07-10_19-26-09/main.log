@@ -1,1 +1,35 @@
 19:26:10: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\common\modules\logger\logger_main_setup.py | setup_main_logger | 62] main logger initialized
+19:26:11: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | main | 133] Connected!
+19:26:11: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE ALTITUDE: 1
+CHANGE YAW: 63.434948822922024
+19:26:12: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE ALTITUDE: -1
+CHANGE YAW: 63.434948822922024
+19:26:12: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] Drone has not been changed
+19:26:13: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] Drone has not been changed
+19:26:13: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] Drone has not been changed
+19:26:14: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] Drone has not been changed
+19:26:14: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] Drone has not been changed
+19:26:15: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: 63.434948822922024
+19:26:15: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: 90.0
+19:26:16: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: 116.56505117707798
+19:26:16: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: 45.0
+19:26:17: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: 63.434948822921996
+19:26:17: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: 90.0
+19:26:18: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: 26.565051177077976
+19:26:18: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: 45.0
+19:26:19: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: 90.0
+19:26:19: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: 45.0
+19:26:20: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: 90.0
+19:26:20: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: 135.0
+19:26:21: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: -26.565051177077976
+19:26:21: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: -45.0
+19:26:22: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: -90.0
+19:26:22: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: -45.0
+19:26:23: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: -90.0
+19:26:23: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: -135.0
+19:26:24: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] Drone has not been changed
+19:26:24: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: -90.0
+19:26:25: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: -116.56505117707798
+19:26:25: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: -45.0
+19:26:26: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] Drone has not been changed
+19:26:26: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 76] CHANGE YAW: -90.0

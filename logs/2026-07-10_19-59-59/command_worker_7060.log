@@ -20,3 +20,129 @@
 20:00:03: [INFO] Average X velocity: 0.0
 20:00:03: [INFO] Average Y velocity: 0.0
 20:00:03: [INFO] Average Z velocity: 0.4
+20:00:03: [INFO] Average X velocity: 0.0
+20:00:03: [INFO] Average Y velocity: 0.0
+20:00:03: [INFO] Average Z velocity: 0.3333333333333333
+20:00:04: [INFO] Average X velocity: 0.0
+20:00:04: [INFO] Average Y velocity: 0.0
+20:00:04: [INFO] Average Z velocity: 0.2857142857142857
+20:00:04: [INFO] Average X velocity: 0.0
+20:00:04: [INFO] Average Y velocity: 2.5
+20:00:04: [INFO] Average Z velocity: 0.25
+20:00:04: [INFO] Current yaw: 0.0 Desired yaw: 1.1071487177940904 Change: 1.1071487177940904
+20:00:04: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: 1.1071487177940904
+20:00:05: [INFO] Average X velocity: 0.0
+20:00:05: [INFO] Average Y velocity: 4.444444444444445
+20:00:05: [INFO] Average Z velocity: 0.2222222222222222
+20:00:05: [INFO] Current yaw: 0.0 Desired yaw: 1.5707963267948966 Change: 1.5707963267948966
+20:00:05: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: 1.5707963267948966
+20:00:05: [INFO] Average X velocity: 0.0
+20:00:05: [INFO] Average Y velocity: 6.0
+20:00:05: [INFO] Average Z velocity: 0.2
+20:00:05: [INFO] Current yaw: 0.0 Desired yaw: 2.0344439357957027 Change: 2.0344439357957027
+20:00:05: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: 2.0344439357957027
+20:00:06: [INFO] Average X velocity: 1.8181818181818181
+20:00:06: [INFO] Average Y velocity: 5.454545454545454
+20:00:06: [INFO] Average Z velocity: 0.18181818181818182
+20:00:06: [INFO] Current yaw: 90.0 Desired yaw: 2.356194490192345 Change: 0.7853981633974483
+20:00:06: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: 0.7853981633974483
+20:00:06: [INFO] Average X velocity: 3.3333333333333335
+20:00:06: [INFO] Average Y velocity: 5.0
+20:00:06: [INFO] Average Z velocity: 0.16666666666666666
+20:00:06: [INFO] Current yaw: 90.0 Desired yaw: 2.677945044588987 Change: 1.1071487177940904
+20:00:06: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: 1.1071487177940904
+20:00:07: [INFO] Average X velocity: 4.615384615384615
+20:00:07: [INFO] Average Y velocity: 4.615384615384615
+20:00:07: [INFO] Average Z velocity: 0.15384615384615385
+20:00:07: [INFO] Current yaw: 90.0 Desired yaw: 3.141592653589793 Change: 1.5707963267948966
+20:00:07: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: 1.5707963267948966
+20:00:07: [INFO] Average X velocity: 4.285714285714286
+20:00:07: [INFO] Average Y velocity: 2.857142857142857
+20:00:07: [INFO] Average Z velocity: 0.14285714285714285
+20:00:07: [INFO] Current yaw: 180.0 Desired yaw: -2.677945044588987 Change: 0.4636476090008064
+20:00:07: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: 0.4636476090008064
+20:00:08: [INFO] Average X velocity: 4.0
+20:00:08: [INFO] Average Y velocity: 1.3333333333333333
+20:00:08: [INFO] Average Z velocity: 0.13333333333333333
+20:00:08: [INFO] Current yaw: -180.0 Desired yaw: -2.356194490192345 Change: 0.7853981633974483
+20:00:08: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: 0.7853981633974483
+20:00:08: [INFO] Average X velocity: 3.75
+20:00:08: [INFO] Average Y velocity: 0.0
+20:00:08: [INFO] Average Z velocity: 0.125
+20:00:08: [INFO] Current yaw: 180.0 Desired yaw: -1.5707963267948966 Change: 1.5707963267948968
+20:00:08: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: 1.5707963267948968
+20:00:09: [INFO] Average X velocity: 2.3529411764705883
+20:00:09: [INFO] Average Y velocity: 0.0
+20:00:09: [INFO] Average Z velocity: 0.11764705882352941
+20:00:09: [INFO] Current yaw: -90.0 Desired yaw: -0.7853981633974483 Change: 0.7853981633974483
+20:00:09: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: 0.7853981633974483
+20:00:09: [INFO] Average X velocity: 1.1111111111111112
+20:00:09: [INFO] Average Y velocity: 0.0
+20:00:09: [INFO] Average Z velocity: 0.1111111111111111
+20:00:09: [INFO] Current yaw: -90.0 Desired yaw: 0.0 Change: 1.5707963267948966
+20:00:09: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: 1.5707963267948966
+20:00:10: [INFO] Average X velocity: 0.0
+20:00:10: [INFO] Average Y velocity: 0.0
+20:00:10: [INFO] Average Z velocity: 0.10526315789473684
+20:00:10: [INFO] Current yaw: -90.0 Desired yaw: 0.7853981633974483 Change: 2.356194490192345
+20:00:10: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: 2.356194490192345
+20:00:10: [INFO] Average X velocity: 0.0
+20:00:10: [INFO] Average Y velocity: 1.0
+20:00:10: [INFO] Average Z velocity: 0.1
+20:00:10: [INFO] Current yaw: 90.0 Desired yaw: 1.1071487177940904 Change: -0.46364760900080615
+20:00:10: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: -0.46364760900080615
+20:00:11: [INFO] Average X velocity: 0.0
+20:00:11: [INFO] Average Y velocity: 1.9047619047619047
+20:00:11: [INFO] Average Z velocity: 0.09523809523809523
+20:00:11: [INFO] Current yaw: 90.0 Desired yaw: 0.7853981633974483 Change: -0.7853981633974483
+20:00:11: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: -0.7853981633974483
+20:00:11: [INFO] Average X velocity: 0.0
+20:00:11: [INFO] Average Y velocity: 2.727272727272727
+20:00:11: [INFO] Average Z velocity: 0.09090909090909091
+20:00:11: [INFO] Current yaw: 90.0 Desired yaw: 0.0 Change: -1.5707963267948966
+20:00:11: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: -1.5707963267948966
+20:00:12: [INFO] Average X velocity: 0.8695652173913043
+20:00:12: [INFO] Average Y velocity: 2.608695652173913
+20:00:12: [INFO] Average Z velocity: 0.08695652173913043
+20:00:12: [INFO] Current yaw: 0.0 Desired yaw: -0.7853981633974483 Change: -0.7853981633974483
+20:00:12: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: -0.7853981633974483
+20:00:12: [INFO] Average X velocity: 1.6666666666666667
+20:00:12: [INFO] Average Y velocity: 2.5
+20:00:12: [INFO] Average Z velocity: 0.08333333333333333
+20:00:12: [INFO] Current yaw: 0.0 Desired yaw: -1.5707963267948966 Change: -1.5707963267948966
+20:00:12: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: -1.5707963267948966
+20:00:13: [INFO] Average X velocity: 2.4
+20:00:13: [INFO] Average Y velocity: 2.4
+20:00:13: [INFO] Average Z velocity: 0.08
+20:00:13: [INFO] Current yaw: 0.0 Desired yaw: -2.356194490192345 Change: -2.356194490192345
+20:00:13: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: -2.356194490192345
+20:00:13: [INFO] Average X velocity: 2.3076923076923075
+20:00:13: [INFO] Average Y velocity: 1.5384615384615385
+20:00:13: [INFO] Average Z velocity: 0.07692307692307693
+20:00:13: [INFO] Current yaw: -90.0 Desired yaw: -2.677945044588987 Change: -1.1071487177940904
+20:00:13: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: -1.1071487177940904
+20:00:14: [INFO] Average X velocity: 2.2222222222222223
+20:00:14: [INFO] Average Y velocity: 0.7407407407407407
+20:00:14: [INFO] Average Z velocity: 0.07407407407407407
+20:00:14: [INFO] Current yaw: -90.0 Desired yaw: 3.141592653589793 Change: -1.5707963267948968
+20:00:14: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: -1.5707963267948968
+20:00:14: [INFO] Average X velocity: 2.142857142857143
+20:00:14: [INFO] Average Y velocity: 0.0
+20:00:14: [INFO] Average Z velocity: 0.07142857142857142
+20:00:14: [INFO] Current yaw: -90.0 Desired yaw: 2.677945044588987 Change: -2.034443935795703
+20:00:14: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: -2.034443935795703
+20:00:15: [INFO] Average X velocity: 1.3793103448275863
+20:00:15: [INFO] Average Y velocity: 0.0
+20:00:15: [INFO] Average Z velocity: 0.06896551724137931
+20:00:15: [INFO] Current yaw: -180.0 Desired yaw: 2.356194490192345 Change: -0.7853981633974485
+20:00:15: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: -0.7853981633974485
+20:00:15: [INFO] Average X velocity: 0.6666666666666666
+20:00:15: [INFO] Average Y velocity: 0.0
+20:00:15: [INFO] Average Z velocity: 0.06666666666666667
+20:00:15: [INFO] Current yaw: 180.0 Desired yaw: 2.0344439357957027 Change: -1.1071487177940904
+20:00:15: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: -1.1071487177940904
+20:00:16: [INFO] Average X velocity: 0.0
+20:00:16: [INFO] Average Y velocity: 0.0
+20:00:16: [INFO] Average Z velocity: 0.06451612903225806
+20:00:16: [INFO] Current yaw: -180.0 Desired yaw: 1.5707963267948966 Change: -1.5707963267948968
+20:00:16: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\command\command.py | run | 155] CHANGE YAW: -1.5707963267948968

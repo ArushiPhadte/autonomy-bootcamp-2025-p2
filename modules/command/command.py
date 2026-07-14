@@ -77,8 +77,6 @@ class Command:  # pylint: disable=too-many-instance-attributes
         """
         Make a decision based on received telemetry data.
         """
-        change_status = False  # bool where False is no changes, True is drone has changed
-        msg = ""  # orginal string where no changes have been made
 
         # Log average velocity for this trip so far
         self.num_data = self.num_data + 1
@@ -120,8 +118,7 @@ class Command:  # pylint: disable=too-many-instance-attributes
                 self._target.z,
             )
             self._logger.info("CHANGE ALTITUDE: " + str(change_height), True)
-            change_status = True
-            msg = msg + "CHANGE ALTITUDE: " + str(change_height)
+            return True, f"CHANGE ALTITUDE: {change_height}"
 
         # Adjust direction (yaw) using MAV_CMD_CONDITION_YAW (115). Must use relative angle to current state
         # String to return to main: "CHANGING_YAW: {degree you changed it by in range [-180, 180]}"
@@ -168,14 +165,10 @@ class Command:  # pylint: disable=too-many-instance-attributes
                 None,
             )
             self._logger.info("CHANGE YAW: " + str(math.degrees(yaw_change)), True)
-            if msg != "":
-                msg = msg + "\n" + "CHANGE YAW: " + str(math.degrees(yaw_change))
-            else:
-                msg = msg + "CHANGE YAW: " + str(math.degrees(yaw_change))
-            change_status = True
+            return True, f"CHANGE YAW: {math.degrees(yaw_change)}"
 
         # Positive angle is counter-clockwise as in a right handed system
-        return change_status, msg
+        return True, None
 
 
 # =================================================================================================

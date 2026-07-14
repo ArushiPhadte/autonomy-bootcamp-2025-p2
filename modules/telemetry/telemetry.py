@@ -111,8 +111,14 @@ class Telemetry:
         msg_position = None
 
         while time.perf_counter() - start < 1:
-            time.sleep(0.25)  # timeout
-            msg = self._connection.recv_match(blocking=True)
+
+            remaining = 1 - (time.perf_counter())
+
+            msg = self._connection.recv_match(
+                type=["ATTITUDE", "LOCAL_POSITION_NED"],
+                blocking=True,
+                timeout=remaining,
+            )
 
             if msg is not None and msg.get_type() == "LOCAL_POSITION_NED":
                 msg_position = msg
@@ -121,12 +127,10 @@ class Telemetry:
 
             if (
                 msg_position is not None and msg_attitude is not None
-            ):  # if msg of attitude and position are valid/not empty, then exit loop
+            ):  # if both messages have been recieved
                 break
 
-        if (
-            msg_position is None or msg_attitude is None
-        ):  # if even one of the messages is empty cause
+        if msg_attitude is None or msg_position is None:
             self._logger.error("Did not recieve both position and attitude", True)
             return False, None
 

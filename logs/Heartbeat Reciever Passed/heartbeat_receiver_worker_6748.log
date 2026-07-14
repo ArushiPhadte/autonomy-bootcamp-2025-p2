@@ -1,0 +1,53 @@
+20:57:00: [INFO] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver_worker.py | heartbeat_receiver_worker | 48] Logger initialized
+20:57:00: [DEBUG] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Recieved heartbeat
+20:57:00: [INFO] Connected
+20:57:00: [DEBUG] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Recieved heartbeat
+20:57:00: [INFO] Connected
+20:57:01: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 65] Did not recieve message
+20:57:01: [INFO] Connected
+20:57:01: [DEBUG] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Recieved heartbeat
+20:57:01: [INFO] Connected
+20:57:02: [DEBUG] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Recieved heartbeat
+20:57:02: [INFO] Connected
+20:57:03: [DEBUG] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Recieved heartbeat
+20:57:03: [INFO] Connected
+20:57:04: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 65] Did not recieve message
+20:57:04: [INFO] Connected
+20:57:05: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 65] Did not recieve message
+20:57:05: [INFO] Connected
+20:57:06: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 65] Did not recieve message
+20:57:06: [INFO] Connected
+20:57:07: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 65] Did not recieve message
+20:57:07: [INFO] Connected
+20:57:08: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 65] Did not recieve message
+20:57:08: [INFO] Disconnected
+20:57:09: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 65] Did not recieve message
+20:57:09: [INFO] Disconnected
+20:57:11: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 65] Did not recieve message
+20:57:11: [INFO] Disconnected
+20:57:12: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 65] Did not recieve message
+20:57:12: [INFO] Disconnected
+20:57:12: [DEBUG] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Recieved heartbeat
+20:57:12: [INFO] Connected
+20:57:13: [DEBUG] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Recieved heartbeat
+20:57:13: [INFO] Connected
+20:57:14: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 65] Did not recieve message
+20:57:14: [INFO] Connected
+20:57:14: [DEBUG] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Recieved heartbeat
+20:57:14: [INFO] Connected
+20:57:15: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 65] Did not recieve message
+20:57:15: [INFO] Connected
+20:57:15: [DEBUG] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Recieved heartbeat
+20:57:15: [INFO] Connected
+20:57:16: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 65] Did not recieve message
+20:57:16: [INFO] Connected
+20:57:16: [DEBUG] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Recieved heartbeat
+20:57:16: [INFO] Connected
+20:57:17: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 65] Did not recieve message
+20:57:17: [INFO] Connected
+20:57:18: [DEBUG] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Recieved heartbeat
+20:57:18: [INFO] Connected
+20:57:19: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 65] Did not recieve message
+20:57:19: [INFO] Connected
+20:57:20: [ERROR] [C:\Users\12897\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 65] Did not recieve message
+20:57:20: [INFO] Connected

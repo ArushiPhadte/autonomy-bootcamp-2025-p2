@@ -65,17 +65,15 @@ def stop(
 
 def read_queue(
     output_queue: queue_proxy_wrapper.QueueProxyWrapper,  # Add any necessary arguments
+    controller: worker_controller.WorkerController,
     main_logger: logger.Logger,
 ) -> None:
     """
     Read and print the output queue.
     """
-    while True:
-        try:
-            state = output_queue.queue.get()
-            main_logger.info(state)
-        except AssertionError:
-            continue
+    while not controller.is_exit_requested():
+        controller.check_pause()
+        main_logger.info(output_queue.queue.get())
 
     # pass  # Add logic to read from your worker's output queue and print it using the logger
 
@@ -223,12 +221,9 @@ def main() -> int:
         telemetry.TelemetryData(
             x=30, y=0, z=30, yaw=-math.pi, x_velocity=-20, y_velocity=0, z_velocity=0
         ),
-        # __________________________
-        # this is where error happens for extra command that should not be send
         telemetry.TelemetryData(
             x=20, y=0, z=30, yaw=math.pi, x_velocity=-20, y_velocity=0, z_velocity=0
         ),
-        # _________________________
         telemetry.TelemetryData(
             x=10, y=0, z=30, yaw=-math.pi, x_velocity=-20, y_velocity=0, z_velocity=0
         ),
@@ -241,7 +236,7 @@ def main() -> int:
     threading.Thread(target=put_queue, args=(path, input_queue)).start()
 
     # Read the main queue (worker outputs)
-    threading.Thread(target=read_queue, args=(output_queue, main_logger)).start()
+    threading.Thread(target=read_queue, args=(output_queue, controller, main_logger)).start()
 
     command_worker.command_worker(connection, TARGET, input_queue, output_queue, controller)
     # =============================================================================================

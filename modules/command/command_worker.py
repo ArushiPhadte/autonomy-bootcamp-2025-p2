@@ -67,10 +67,12 @@ def command_worker(
 
         status, msg = command_obj.run(telemetry_data)
 
-        if status is True:  # changes have been made
+        if not status:
+            local_logger.warning("Failed to process telemetry")
+            continue
+
+        if msg is not None:  # changes have been made
             output_queue.queue.put(msg)
-        else:
-            output_queue.queue.put("Drone has not been changed")
 
 
 # =================================================================================================

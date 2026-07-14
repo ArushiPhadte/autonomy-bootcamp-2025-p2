@@ -240,6 +240,9 @@ def main() -> int:
         try:
             status = heartbeat_queue.queue.get_nowait()
             main_logger.info("Heartbeat :" + str(status))
+
+            if status == "Disconnected":
+                break
         except queue.Empty:
             pass
 
@@ -256,9 +259,9 @@ def main() -> int:
     main_logger.info("Requested exit")
 
     # Fill and drain queues from END TO START
-    heartbeat_queue.fill_and_drain_queue()
-    telemetry_queue.fill_and_drain_queue()
     command_queue.fill_and_drain_queue()
+    telemetry_queue.fill_and_drain_queue()
+    heartbeat_queue.fill_and_drain_queue()
 
     main_logger.info("Queues cleared")
 
